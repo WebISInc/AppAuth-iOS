@@ -113,7 +113,9 @@ static NSString *const kQueryStringParamAdditionalDisallowedCharacters = @"=&+";
     parameterValues = [NSMutableArray array];
     _parameters[parameter] = parameterValues;
   }
-  [parameterValues addObject:value];
+	if (value) {
+		[parameterValues addObject:value];
+	}
 }
 
 - (void)addParameters:(NSDictionary<NSString *, NSString *> *)parameters {
